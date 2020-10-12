@@ -5,6 +5,9 @@ draft: true
 ---
 
 
+[my-first-post] ({{ref < "/my-first-post" >}} "my-first-post)
+
+
 am i gay? lol. XD. I'm fuckin gay. 
 
 
