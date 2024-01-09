@@ -51,7 +51,7 @@ a {
   color: white;
   font-size: 25px;
   text-align: center ;
-  height: 20px; 
+  margin: auto;
 }
 .sidebar-left {
   margin-left: 0;
