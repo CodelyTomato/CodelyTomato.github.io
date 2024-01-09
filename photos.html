@@ -3,13 +3,24 @@
 <head>
   <title>photographs</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .zoom {
+      padding: 40px;
+      transition: transform .2s;
+    }
+    .zoom:hover {
+      -ms-transform: scale(1.5);
+      -webkit-transform: scale(1.5);
+      transform: scale(1.5);
+    }
+  </style>
 </head>
 <body>
   <div class="sidebox">
     <div class="heading">
       <p><b>Favorites</b></p>
     </div>
-    <a href="photocollection\favorites\fav.html" target="_blank"><img src="Art/favcover.JPG" alt="favorites"></img></a>
+    <div class="div-img"><a href="photocollection/favorites/fav.html" target="_blank"><img src="Art/favcover.JPG" alt="favorites"></a></div>
   </div>
 </body>
 
