@@ -6,7 +6,7 @@
   width: 50%;
 }
 h1 {
-  font-size: 30px;
+  font-size: 25px;
   font-family: MsSansSerif;
 }
 p {
@@ -42,7 +42,7 @@ a {
     display: inline-block;
 }
 .heading {
-    background-color: #d5d8dc;
+    background-color: #707b7c;
     padding-left: 2px;
     padding-right: 2px;
     padding-bottom: 2px;
