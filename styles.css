@@ -14,7 +14,7 @@ p {
   font-family: MsSansSerif;
 }
 body {
-  background-color: lightskyblue; 
+  background-color: cornflowerblue; 
 }
 a {
   text-decoration: none;
@@ -22,16 +22,17 @@ a {
 }
 .box {
     font-size: 1.075em;
-    border: 3px groove;
+    border: 3px groove black;
     background-color: #fff;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 0px;
     margin-right: 0px;
+    box-shadow: 10px 10px;
 }
 .sidebox {
     font-size: 1.075em;
-    border: 3px groove;
+    border: 3px groove black;
     background-color: #fff;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -40,12 +41,12 @@ a {
     display: inline-block;
 }
 .heading {
-    background-color: cornflowerblue;
+    background-color: lightsteelblue;
     padding-left: 2px;
     padding-right: 2px;
     padding-bottom: 5px;
     padding-top: 2px;
-    border: 3px groove;
+    border: 3px groove black;
     color: black;
     font-size: 15px;
     text-align: left;
@@ -55,10 +56,11 @@ a {
     height: 35px;
 }
 .sidebar-left {
-  margin-left: 0;
-  width: 200px ;
-  position: absolute;
-  top: 0;
-  display: inline-block;
-  text-align: center;
+    margin-left: 0;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 10px 10px;
 }
