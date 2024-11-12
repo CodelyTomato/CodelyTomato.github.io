@@ -14,9 +14,7 @@ p {
   font-family: MsSansSerif;
 }
 body {
-  background-image: url('http://dl3.glitter-graphics.net/pub/1816/1816003ae89mys83f.gif');
-  background-attachment: fixed;
-  background-repeat: repeat;
+  background-color: lightskyblue; 
 }
 a {
   text-decoration: none;
@@ -24,7 +22,7 @@ a {
 }
 .box {
     font-size: 1.075em;
-    border: 3px groove #dc7633;
+    border: 3px groove;
     background-color: #fff;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -33,7 +31,7 @@ a {
 }
 .sidebox {
     font-size: 1.075em;
-    border: 3px groove #dc7633;
+    border: 3px groove;
     background-color: #fff;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -42,17 +40,19 @@ a {
     display: inline-block;
 }
 .heading {
-    background-color: #707b7c;
+    background-color: cornflowerblue;
     padding-left: 2px;
     padding-right: 2px;
     padding-bottom: 5px;
     padding-top: 2px;
-    border: 3px groove #dc7633;
+    border: 3px groove;
     color: black;
     font-size: 15px;
     text-align: left;
-    line-height: 17.5px; 
-    height: 35px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
 }
 .sidebar-left {
   margin-left: 0;
