@@ -39,6 +39,7 @@ a {
     margin-left: 0px;
     margin-right: 0px;
     display: inline-block;
+    box-shadow: 10px 10px;
 }
 .heading {
     background-color: lightsteelblue;
@@ -62,5 +63,5 @@ a {
     top: 0;
     display: inline-block;
     text-align: center;
-    box-shadow: 10px 10px;
+    
 }
