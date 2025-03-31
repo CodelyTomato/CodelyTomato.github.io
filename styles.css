@@ -14,9 +14,9 @@ p {
   font-family: MsSansSerif;
 }
 body {
-  background-image: url('http://dl3.glitter-graphics.net/pub/1816/1816003ae89mys83f.gif');
-  background-attachment: fixed;
-  background-repeat: repeat;
+    background-image: url('Art/CLOVER2.jpeg');
+    background-attachment: fixed;
+    background-repeat: repeat;
 }
 a {
   text-decoration: none;
@@ -31,16 +31,7 @@ a {
     margin-left: 0px;
     margin-right: 0px;
 }
-.sidebox {
-    font-size: 1.075em;
-    border: 3px groove #dc7633;
-    background-color: #fff;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 0px;
-    margin-right: 0px;
-    display: inline-block;
-}
+
 .heading {
     background-color: #707b7c;
     padding-left: 2px;
@@ -54,11 +45,6 @@ a {
     line-height: 17.5px; 
     height: 35px; 
 }
-.sidebar-left {
-  margin-left: 0;
-  width: 200px ;
-  position: absolute;
-  top: 0;
-  display: inline-block;
-  text-align: center;
-}
+
+
+
