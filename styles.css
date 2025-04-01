@@ -14,53 +14,64 @@ p {
   font-family: MsSansSerif;
 }
 body {
-  background-color: cornflowerblue; 
+    background-image: url('https://www.afmoriarty.com/Art/CLOVER2.JPG');
+    background-attachment: fixed;
+    background-repeat: repeat;
 }
 a {
   text-decoration: none;
   color: blue;
 }
-.box {
-    font-size: 1.075em;
-    border: 3px groove black;
-    background-color: #fff;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 0px;
-    margin-right: 0px;
-    box-shadow: 10px 10px;
+
+.box, .box-left, .box-right {
+  font-size: 1.075em;
+  border: 3px groove;
+  background-color: #c5e1a5;
+  margin: 5px 0;
 }
-.sidebox {
-    font-size: 1.075em;
-    border: 3px groove black;
-    background-color: #fff;
-    margin-bottom: 20px;
-    margin-left: 0px;
-    margin-right: 0px;
-    display: inline-block;
-}
+.box-left { float: left; }
+.box-right { float: right; }
+
+
 .heading {
-    background-color: lightsteelblue;
-    margin-bottom: 20px; 
-    padding-left: 2px;
+    background-color: #558b2f ;
+    padding-left: 10px;
     padding-right: 2px;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
     padding-top: 2px;
     border: 3px groove black;
-    color: black;
+    color: white;
     font-size: 15px;
     text-align: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 35px;
+    line-height: 17.5px; 
+    height: 35px; 
 }
-.sidebar-left {
-    margin-left: 0;
-    width: 200px;
-    position: absolute;
-    top: 0;
-    display: inline-block;
-    text-align: center;
-    box-shadow: 10px 10px;
+
+.container {
+    align-items: flex-start; 
+    display: flex;
+    justify-content: space-between; /* Ensures spacing between boxes */
+    gap: 10px; /* Optional: Adjust the space between the boxes */
+}
+
+.box-left, .box-right {
+    width: 60%; /* Adjust width so they fit side by side */
+}
+
+.box-right img {
+    width: 100%;   /* Makes the image scale to fit the box */
+    height: auto;  /* Maintains the aspect ratio */
+    display: block; /* Removes any extra spacing from inline images */
+}
+
+.links-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures spacing between links and image */
+}
+
+.link-image {
+    width: 50px; /* Adjust as needed */
+    height: auto;
+    margin-left: 10px;
 }
