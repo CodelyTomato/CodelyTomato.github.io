@@ -65,13 +65,14 @@ a {
 }
 
 .links-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Ensures spacing between links and image */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  text-align: center;
 }
 
 .link-image {
-    width: 50px; /* Adjust as needed */
-    height: auto;
-    margin-left: 10px;
+  width: 100px; /* Adjust size as needed */
+  height: auto; /* Adjust size as needed */
+  margin-top: 10px; /* Adds spacing from the links above */
 }
