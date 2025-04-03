@@ -76,3 +76,19 @@ a {
   height: auto; /* Adjust size as needed */
   margin-top: 10px; /* Adds spacing from the links above */
 }
+.nav-box {
+    position: absolute; /* Allows precise placement */
+    top: 10px; /* Adjust this to move it above the "Home" bar */
+    right: 10px; /* Moves it to the right */
+    background-color: #c5e1a5; /* Matching the box style */
+    padding: 10px;
+    border: 3px groove black;
+    text-align: center;
+    width: 150px; /* Adjust width as needed */
+}
+.nav-box a {
+    text-decoration: none;
+    color: #c5e1a5;
+    display: block; /* Makes each link appear on a new line */
+    padding: 5px 0;
+}
