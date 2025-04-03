@@ -82,11 +82,16 @@
         // Render the BoxGrid inside the "root" div
         ReactDOM.createRoot(document.getElementById("root")).render(<BoxGrid />);
     </script>
-    <div class="nav-box">
-      <p><a href="index.html"><b>Home</b></a></p>
-      <p><a href="about.html"><b>About</b></a></p>
-      <p><a href="contact.html"><b>Contact</b></a></p>
-    </div>
+
+<div id="nav-placeholder"></div>
+
+<script>
+  fetch("nav.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
+    });
+</script>
 
 </body>
 </html>
