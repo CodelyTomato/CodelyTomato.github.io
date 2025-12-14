@@ -1,95 +1,141 @@
-@font-face { font-family: MsSansSerif; src: url('ms-sans-serif-1.ttf'); }
+@font-face {
+  font-family: Bion-BookCond;
+  src: url('fonts/Bion-BookCond.woff2') format('woff2'), 
+       url('fonts/Bion-Book.woffCond') format('woff'), 
+       url('fonts/Bion-Book.ttfCond') format('truetype'); 
+}
+
+@font-face {
+  font-family: Bion-BoldCond; 
+  src:url('fonts/Bion-BoldCond.woff2') format('woff2'), 
+      url('fonts/Bion-BoldCond.woff') format('woff'), 
+      url('fonts/Bion-BoldCond.ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: Bion-BoldCond; 
+  src:url('fonts/Bion-BoldCond.woff2') format('woff2'), 
+      url('fonts/Bion-BoldCond.woff') format('woff'), 
+      url('fonts/Bion-BoldCond.ttf') format('truetype'); 
+}
+
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
-h1 {
-  font-size: 30px;
-  font-family: MsSansSerif;
-}
 p {
   font-size: 20px;
-  font-family: MsSansSerif;
+  font-family: 'Bion-BookCond'; 
+}
+b {
+  font-size: 25px; 
+  font-family: 'Bion-BoldCond'; 
+}
+h1 {
+  font-size: 40px; 
+  font-family: 'Bion-BoldCond'; 
 }
 body {
-    background-image: url('Art/CLOVER2.JPG');
-    background-attachment: fixed;
-    background-repeat: repeat;
-}
-a {
-  text-decoration: none;
-  color: blue;
+  background: repeating-conic-gradient(
+  from 0deg at 100% 0%,
+  black 0deg,
+  black 10deg,
+  white 10deg,
+  white 20deg
+  );
+  min-height:100vh; 
 }
 
-.box, .box-left, .box-right {
+.box {
   font-size: 1.075em;
-  border: 3px groove;
-  background-color: #c5e1a5;
-  margin: 5px 0;
-}
-.box-left { float: left; }
-.box-right { float: right; }
-
-
-.heading {
-    background-color: #558b2f ;
-    padding-left: 10px;
-    padding-right: 2px;
-    padding-bottom: 20px;
-    padding-top: 2px;
-    border: 3px groove black;
-    color: white;
-    font-size: 15px;
-    text-align: left;
-    line-height: 17.5px; 
-    height: 35px; 
+  border: 10px solid #ece1d6; 
+  box-shadow: 10px 10px white, 20px 20px black;
+  background-color: #ece1d6; 
 }
 
-.container {
-    align-items: flex-start; 
-    display: flex;
-    justify-content: space-between; /* Ensures spacing between boxes */
-    gap: 10px; /* Optional: Adjust the space between the boxes */
+.lower_box { 
+  font-size: 1.075em;
+  margin-top: 40px; 
+  border: 10px solid #ece1d6; 
+  box-shadow: 10px 10px white, 20px 20px black;
+  background-color: #ece1d6; 
 }
 
-.box-left, .box-right {
-    width: 60%; /* Adjust width so they fit side by side */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 20px; /* Space between books */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 10px solid #ece1d6; 
+  box-shadow: 10px 10px white, 20px 20px black;
+  background-color: #ece1d6; 
 }
 
-.box-right img {
-    width: 100%;   /* Makes the image scale to fit the box */
-    height: auto;  /* Maintains the aspect ratio */
-    display: block; /* Removes any extra spacing from inline images */
-}
-
-.links-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers content horizontally */
-  text-align: center;
-}
-
-.link-image {
-  width: 100px; /* Adjust size as needed */
-  height: auto; /* Adjust size as needed */
-  margin-top: 10px; /* Adds spacing from the links above */
-}
-.nav-box {
-  position: absolute; /* Keeps it in the same place on all pages */
-  top: 10px; /* Distance from the top */
-  right: 40px; /* Distance from the right */
-  background-color: #c5e1a5; /* Matching the box style */
-  padding: 10px;
-  border: 3px groove black;
-  text-align: center;
-  width: 150px; /* Adjust as needed */
-  z-index: 1000; /* Ensures it stays on top of other content */
-}
-.nav-box a {
+.book-card {
   text-decoration: none;
-  color: black;
-  display: block; /* Makes each link appear on a new line */
-  padding: 5px 0;
+  color: inherit;
+  text-align: center;
+  transition: transform ;
 }
+
+.book-card:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.book-card p {
+  margin-top: 0px;
+  font-size: 15px;
+}
+
+ol.breadcrumb {
+  font-size: 20px; 
+}
+
+ol.breadcrumb li {
+  display: inline; 
+}
+
+ol.breadcrumb li+li:before {
+  content:"// "
+}
+
+nav a {
+  background: linear-gradient(0deg, green, green) no-repeat right bottom / 0 var(--bg-h);
+  transition: background-size 350ms;
+  --bg-h: 100%;
+}
+
+nav a {
+  text-decoration: underline; 
+  text-decoration-color: green; 
+  line-height: 1; 
+  color: inherit; 
+}
+
+.underline {
+  --bg-h: 2px; 
+}
+
+nav a:where(:hover, :focus-visible) {
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
+}
+
+
+
+
+
+
+

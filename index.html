@@ -1,57 +1,45 @@
 <!DOCTYPE html>
 <html lang = "en-US">
-
-
 <head>
   <meta author = "Aidan Moriarty">
 <title>
-  Aidan's Website
+  a.f.moriarty | home
 </title>
 <link rel="stylesheet" href="styles.css"></link>
 <style>
 </style>
 </head>
-
 <div class = "center">
   <div class = "box">
-    <div class="heading">
-      <h1><b> Home </b></h1>
-    </div>
-    <p style="text-align: center"> Aidan's website! </p>
+    <h1> Home </h1>
+    <p>date of creation: Sun Mar 28 09:36:38 2021</p>
+    <nav>
+    <p>author: <a href="about.html" target="_blank" class="underline">Aidan Moriarty</a></p>
+    </nav>
+    <p>I always wanted a slice of the internet of my own, to add a little bit of myself and my interests to the world wide web. 
+      This little site is the result! I have a lot of ideas on improving it, just you wait. I don't use web hosting tools! This is all 
+      html and css written by yours truly.
+    </p>
+    <p>I am an engineering student studying aerospace engineering at WashU hoping to someday become employed.</p>
+    <p>Backup plan: wandering.</p>
   </div>
-
-  <div id="nav-placeholder"></div>
-
-  <script>
-    fetch("nav.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("nav-placeholder").innerHTML = data;
-      });
-  </script>
-  
-<div class="container">
-    <div class="box-left">
-  <div class="heading">
-    <h1><b> Links </b></h1>
+  <div class = "lower_box"> 
+    <h1>Pages</h1>
+    <nav>
+    <p><a href="bookshelf.html" target="_blank" class="underline">Bookshelf</a> - collection of books I've read. This link works.</p>
+    <p><a href="projects.html" target="_blank" class="underline">Projects</a> - an assortment of my work and future ideas. UNDER CONSTRUCTION</p>
+    <p><a href="photos.html" target="_blank" class="underline">Photos</a> - some pictures I've taken. UNDER CONSTRUCTION</p>
+    </nav>
   </div>
-  <div class="links-container">
-    <div class="links">
-      <p><a href="library.html" target="_blank"><u><b> - My Library</b></u></a></p>
-      <p><a href="https://steamcommunity.com/id/ts-robot/" target="_blank"><u><b> - Steam</b></u></a></p>
-      <p><a href="https://github.com/CodelyTomato" target="_blank"><u><b> - Github</b></u></a></p>
-      <p><a href="https://www.linkedin.com/in/aidan-moriarty-43a9b02b4" target="_blank"><u><b> - LinkedIn</b></u></a></p>
-    </div>
-    <img src='Art/reverseearth.gif' class="link-image">
+  <div class = 'lower_box'>
+    <h1>Where to find me</h1>
+    <nav>
+    <p><a href="https://github.com/CodelyTomato.html" target="_blank" 
+    class="underline">Github</a> - <a href="https://taggart-tech.com/migrate-to-codeberg/" 
+    target="_blank" class = "underline">NOT FOR LONG.</a></p>
+    <p><a href="www.linkedin.com/in/aidan-f-moriarty" target="_blank" class="underline">Linkedin</a> - 
+      Hoping to find work. The closer to space the better.</p>
+    <p><a href="https://steamcommunity.com/id/ts-robot/" target="_blank" class="underline">Steam</a> - Don't judge. Paradox took all my money.</p>
+    </nav>
   </div>
-</div>
-
-    <div class="box-right">
-      
-   <div class = "heading">
-      <h1><a href="photos.html" target="_blank"><u><b>Check out my photos!</b></u></a></h1>
-    </div>   
-      <img src='Art/aidan-canyon.jpg'>
-    </div>
-   </div>
 </html>
