@@ -75,6 +75,37 @@ body {
   background-color: #ece1d6; 
 }
 
+@media (max-width: 1200px) {
+  .book-grid {
+    grid-template-columns: repeat(6, 1fr); 
+  }
+}
+
+/* Tablets: 4 columns */
+@media (max-width: 900px) {
+  .book-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large phones/small tablets: 3 columns */
+@media (max-width: 600px) {
+  .book-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+/* Small phones: 2 columns */
+@media (max-width: 400px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
 .book-card {
   text-decoration: none;
   color: inherit;

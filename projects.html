@@ -7,7 +7,48 @@
 </title>
 <link rel="stylesheet" href="./styles.css"></link>
 <style>
+  body {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh; 
+    background: white; 
+    position: relative; 
+  }
+  .centered-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    max-width: fit-content; 
+  }
+  img {
+    display: block; 
+    width: auto; 
+    max-width: 250px; 
+  }
+  .top-right {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    width: 150px; 
+  }
+  .centered-section:hover {
+    transform: scale(1.25); 
+  }
+  p {
+    font-size: 15px; 
+    text-align: center; 
+  }
+
 </style>
 </head>
-
+<body style="background: white;">
+  <img 
+  <div class="centered-section">
+    <img src="Art/grill.png" alt="grill">
+    <p>ENGR 3010 Technical Writing FP
+      <br>Heat transfer study of a hot dog on a grill</p>
+  </div>
+</body>
 </html>
