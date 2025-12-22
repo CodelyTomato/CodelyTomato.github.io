@@ -41,14 +41,32 @@
     text-align: center; 
   }
 
+  a {
+    text-decoration: none; 
+    color: inherit; 
+  }
+
+  nav {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+  }
+
 </style>
 </head>
 <body style="background: white;">
-  <img 
-  <div class="centered-section">
-    <img src="Art/grill.png" alt="grill">
-    <p>ENGR 3010 Technical Writing FP
-      <br>Heat transfer study of a hot dog on a grill</p>
-  </div>
+    <nav>
+      <ol class = "breadcrumb">
+          <li><a href="/" target = "_self" class="underline">Home</a></li>
+          <li><a href="projects.html" target="_self" class="underline">Projects</a></li>
+      </ol>
+  </nav>
+  <a href="grill.html" target="self">
+    <div class="centered-section">
+      <img src="Art/grill.png" alt="grill">
+      <p>ENGR 3010 Technical Writing FP
+        <br>heat transfer study of a hot dog on a grill</p>
+    </div>
+  </a>
 </body>
 </html>

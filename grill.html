@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+    <meta author = "Aidan Moriarty">
+    <title>
+        afmoriarty | grill
+    </title>
+    <link rel="stylesheet" href="./styles.css"></link>
+    <style>
+        .pdfobject-container {
+            height:500px; 
+            border:1px solid #ccc; 
+        }
+    </style>
+</head>
+    <body>
+        <div class = "center">
+            <div class = "box">
+                <nav>
+                    <ol class = "breadcrumb">
+                        <li><a href="/" target = "_self" class="underline">Home</a></li>
+                        <li><a href="projects.html" target="_self" class="underline">Projects</a></li>
+                        <li><a href="grill.html" target="_self" class="underline">Grill</a></li>
+                    </ol>
+                </nav>
+                <h1> ENGR 3010 Technical Writing FP </h1>
+                <p>
+                    This is a paper written as the final project for my technical writing course.
+                    It is based on the work performed for the final project of my heat transfer course.
+                    The nice thing about a group project where you do all the work is you get all the credit!
+                </p>
+                <div id="grill-pdf" class="pdfobject-container"></div>
+                <script src="https://unpkg.com/pdfobject"></script>
+                <script>PDFObject.embed("pdfs/grill-pdf.pdf", "#grill-pdf");</script>
+            </div>
+        </div>
+    </body>
+</html>
