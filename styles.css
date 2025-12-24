@@ -79,6 +79,9 @@ body {
   .book-grid {
     grid-template-columns: repeat(6, 1fr); 
   }
+  .photo-grid {
+    grid-template-columns: repeat(4, 1fr); 
+  }
 }
 
 /* Tablets: 4 columns */
@@ -86,6 +89,10 @@ body {
   .book-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+      .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
 }
 
 /* Large phones/small tablets: 3 columns */
@@ -95,6 +102,15 @@ body {
     gap: 15px;
     padding: 15px;
   }
+      .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+        .photo-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        padding: 10px;
+      }
+
 }
 
 /* Small phones: 2 columns */
@@ -104,7 +120,9 @@ body {
     gap: 10px;
     padding: 10px;
   }
+
 }
+
 
 .book-card {
   text-decoration: none;
@@ -164,6 +182,77 @@ nav a:where(:hover, :focus-visible) {
   background-position-x: left;
 }
 
+.photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px; /* Space between books */
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      border: 10px solid #ece1d6; 
+      box-shadow: 10px 10px white, 20px 20px black;
+      background-color: #ece1d6; 
+}
+    .photo-card {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    transition: transform ;
+    }
+
+    .photo-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    .photo-card img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 2px 2px white, 5px 5px black;
+    margin-bottom: 2px;
+    }
+
+    .photo-card p {
+      margin-top: 0px;
+      font-size: 15px;
+    }
+
+    .photo-card b {
+      font-size: 20px;
+    }
+
+    .hover-wrapper {
+      position:relative; 
+      cursor: pointer; 
+      font-style: italic;
+      color:green; 
+      text-decoration-line: underline;
+    }
+
+    .hover-box {
+      display: none; 
+      position: absolute; 
+      bottom: 120%; 
+      left:-50%; 
+      z-index:10; 
+      background:#fff; 
+      border:1px solid #000; 
+      padding:5px; 
+      width:200px; 
+      color:#000; 
+      font-style: normal;
+      text-decoration: none; 
+    }
+
+    .hover-wrapper:hover .hover-box, 
+    .hover-wrapper:focus-within .hover-box {
+      display:block;
+    }
+
+    b.wrappy {
+      font-size: 20px; 
+    }
 
 
 
