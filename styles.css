@@ -41,11 +41,11 @@
   --content-width: 1200px;
 }
 
-
 /* 3. Base elements
    -------------------------------------------------------------------------- */
 body {
   min-height: 100vh;
+  font-family: 'Bion-BookCond';
   background: repeating-conic-gradient(
     from 0deg at 100% 0%,
     black 0deg,   black 10deg,
@@ -135,7 +135,8 @@ h1 {
    differing text lengths don't push images out of line. */
 .project-grid {
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+  justify-content: center;
   align-items: start;
 }
 
@@ -156,13 +157,14 @@ h1 {
 }
 
 .book-card p,
-.photo-card p,
-.project-card p {
+.photo-card p {
   margin-top: 0;
   font-size: 15px;
 }
 
-.project-card b { font-size: 15px; }
+.project-card p { font-size: 20px;}
+
+.project-card b { font-size: 25px; }
 .photo-card b   { font-size: 20px; }
 
 /* Card images */
@@ -193,6 +195,32 @@ h1 {
   margin: 0 auto 8px;
 }
 
+figure.float-right {
+  float: right;
+  width: 400px;
+  margin: 0 0 15px 40px;
+}
+
+figure.float-left {
+  float: left;
+  width: 400px;
+  margin: 0 40px 15px 0;
+}
+
+figure.float-right figcaption,
+figure.float-left figcaption {
+  font-family: 'Bion-BookCond';
+  font-size: 15px;
+  text-align: center;
+}
+
+figure.float-right img,
+figure.float-left img {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
 
 /* 7. Navigation / breadcrumb
    -------------------------------------------------------------------------- */
@@ -208,7 +236,12 @@ ol.breadcrumb li + li::before {
   content: "// ";
 }
 
-nav a {
+ul {
+  font-size:20px;
+  list-style-type: "- ";
+}
+
+a.underline {
   --bg-h: 100%;
   background: linear-gradient(0deg, var(--accent), var(--accent))
               no-repeat right bottom / 0 var(--bg-h);
@@ -219,13 +252,32 @@ nav a {
   color: inherit;
 }
 
-nav a.underline {
+a.underline {
   --bg-h: 2px;
 }
 
-nav a:where(:hover, :focus-visible) {
+a.underline:where(:hover, :focus-visible) {
   background-size: 100% var(--bg-h);
   background-position-x: left;
+}
+
+.spec-table {
+  border-collapse: collapse;
+  margin: 20px auto;          /* centers it */
+  font-family: 'Bion-BookCond';
+  font-size: 20px;
+}
+
+.spec-table th,
+.spec-table td {
+  border: 2px solid black;
+  padding: 6px 16px;
+  text-align: left;
+}
+
+.spec-table th {
+  font-family: 'Bion-BoldCond';
+  text-align: center;
 }
 
 
@@ -254,26 +306,18 @@ nav a:where(:hover, :focus-visible) {
   text-decoration: none;
 }
 
-.hover-wrapper:hover .hover-box,
-.hover-wrapper:focus-within .hover-box {
-  display: block;
+.project-card:hover,
+.book-card:hover { transform: none; }
+
+.project-card img,
+.book-card img {
+  transition: transform 0.2s ease;
 }
 
-
-/* 9. Page-specific: projects
-   -------------------------------------------------------------------------- */
-body.projects-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+.project-card:hover img,
+.book-card:hover img {
+  transform: scale(1.05);
 }
-
-.projects-page a {
-  text-decoration: none;
-  color: inherit;
-}
-
 
 /* 10. Responsive
    -------------------------------------------------------------------------- */
@@ -309,3 +353,4 @@ body.projects-page {
     padding: 10px;
   }
 }
+
