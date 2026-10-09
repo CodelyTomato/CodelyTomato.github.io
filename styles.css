@@ -1,180 +1,226 @@
+/* ==========================================================================
+   afmoriarty — site styles
+   Sections:
+   1. Fonts
+   2. Variables
+   3. Base elements
+   4. Layout helpers
+   5. Boxes
+   6. Grids & cards (books, photos, projects)
+   7. Navigation / breadcrumb
+   8. Hover tooltip
+   9. Page-specific: projects
+   10. Responsive
+   ========================================================================== */
+
+
+/* 1. Fonts
+   -------------------------------------------------------------------------- */
 @font-face {
-  font-family: Bion-BookCond;
-  src: url('fonts/Bion-BookCond.woff2') format('woff2'), 
-       url('fonts/Bion-Book.woffCond') format('woff'), 
-       url('fonts/Bion-Book.ttfCond') format('truetype'); 
+  font-family: 'Bion-BookCond';
+  src: url('fonts/Bion-BookCond.woff2') format('woff2'),
+       url('fonts/Bion-BookCond.woff') format('woff'),
+       url('fonts/Bion-BookCond.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: Bion-BoldCond; 
-  src:url('fonts/Bion-BoldCond.woff2') format('woff2'), 
-      url('fonts/Bion-BoldCond.woff') format('woff'), 
-      url('fonts/Bion-BoldCond.ttf') format('truetype'); 
+  font-family: 'Bion-BoldCond';
+  src: url('fonts/Bion-BoldCond.woff2') format('woff2'),
+       url('fonts/Bion-BoldCond.woff') format('woff'),
+       url('fonts/Bion-BoldCond.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: Bion-BoldCond; 
-  src:url('fonts/Bion-BoldCond.woff2') format('woff2'), 
-      url('fonts/Bion-BoldCond.woff') format('woff'), 
-      url('fonts/Bion-BoldCond.ttf') format('truetype'); 
+
+/* 2. Variables
+   -------------------------------------------------------------------------- */
+:root {
+  --paper: #ece1d6;
+  --accent: green;
+  --shadow-offset: 10px 10px white, 20px 20px black;
+  --shadow-offset-small: 2px 2px white, 5px 5px black;
+  --content-width: 1200px;
 }
 
+
+/* 3. Base elements
+   -------------------------------------------------------------------------- */
+body {
+  min-height: 100vh;
+  background: repeating-conic-gradient(
+    from 0deg at 100% 0%,
+    black 0deg,   black 10deg,
+    white 10deg,  white 20deg
+  );
+}
+
+p {
+  font-size: 20px;
+  font-family: 'Bion-BookCond';
+}
+
+b {
+  font-size: 25px;
+  font-family: 'Bion-BoldCond';
+}
+
+b.wrappy {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 30px; /* was "3f0px" (typo) */
+  font-family: 'Bion-BoldCond';
+}
+
+
+/* 4. Layout helpers
+   -------------------------------------------------------------------------- */
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
-p {
-  font-size: 20px;
-  font-family: 'Bion-BookCond'; 
-}
-b {
-  font-size: 25px; 
-  font-family: 'Bion-BoldCond'; 
-}
-h1 {
-  font-size: 3f0px; 
-  font-family: 'Bion-BoldCond'; 
-}
-body {
-  background: repeating-conic-gradient(
-  from 0deg at 100% 0%,
-  black 0deg,
-  black 10deg,
-  white 10deg,
-  white 20deg
-  );
-  min-height:100vh; 
+
+
+/* 5. Boxes
+   -------------------------------------------------------------------------- */
+.box,
+.lower_box,
+.book-grid,
+.photo-grid,
+.project-grid {
+  border: 10px solid var(--paper);
+  box-shadow: var(--shadow-offset);
+  background-color: var(--paper);
 }
 
-.box {
+.box,
+.lower_box {
   font-size: 1.075em;
-  border: 10px solid #ece1d6; 
-  box-shadow: 10px 10px white, 20px 20px black;
-  background-color: #ece1d6; 
 }
 
-.lower_box { 
-  font-size: 1.075em;
-  margin-top: 40px; 
-  border: 10px solid #ece1d6; 
-  box-shadow: 10px 10px white, 20px 20px black;
-  background-color: #ece1d6; 
+.lower_box {
+  margin-top: 40px;
 }
 
-.book-grid {
+/* Images inside a box never overflow it */
+.box img,
+.lower_box img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+}
+
+
+/* 6. Grids & cards
+   -------------------------------------------------------------------------- */
+
+/* Shared grid settings */
+.book-grid,
+.photo-grid,
+.project-grid {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 20px; /* Space between books */
+  gap: 20px;
   padding: 20px;
-  max-width: 1200px;
+  max-width: var(--content-width);
   margin: 0 auto;
-  border: 10px solid #ece1d6; 
-  box-shadow: 10px 10px white, 20px 20px black;
-  background-color: #ece1d6; 
 }
 
-@media (max-width: 1200px) {
-  .book-grid {
-    grid-template-columns: repeat(6, 1fr); 
-  }
-  .photo-grid {
-    grid-template-columns: repeat(4, 1fr); 
-  }
+.book-grid    { grid-template-columns: repeat(8, 1fr); }
+.photo-grid   { grid-template-columns: repeat(4, 1fr); }
+
+/* Projects: columns fill automatically, cards are top-aligned so
+   differing text lengths don't push images out of line. */
+.project-grid {
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
 }
 
-/* Tablets: 4 columns */
-@media (max-width: 900px) {
-  .book-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-      .photo-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-}
-
-/* Large phones/small tablets: 3 columns */
-@media (max-width: 600px) {
-  .book-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 15px;
-  }
-      .photo-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-        .photo-grid {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 10px;
-        padding: 10px;
-      }
-
-}
-
-/* Small phones: 2 columns */
-@media (max-width: 400px) {
-  .book-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 10px;
-  }
-
-}
-
-
-.book-card {
+/* Shared card behavior */
+.book-card,
+.photo-card,
+.project-card {
   text-decoration: none;
   color: inherit;
   text-align: center;
-  transition: transform ;
+  transition: transform 0.2s ease;
 }
 
-.book-card:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
+.book-card:hover,
+.photo-card:hover,
+.project-card:hover {
+  transform: scale(1.05);
 }
 
-.book-card img {
+.book-card p,
+.photo-card p,
+.project-card p {
+  margin-top: 0;
+  font-size: 15px;
+}
+
+.project-card b { font-size: 15px; }
+.photo-card b   { font-size: 20px; }
+
+/* Card images */
+.book-card img,
+.photo-card img {
   width: 100%;
   height: auto;
   border: 2px solid #ddd;
   border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.book-card p {
-  margin-top: 0px;
-  font-size: 15px;
+.book-card img {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.photo-card img {
+  box-shadow: var(--shadow-offset-small);
+  margin-bottom: 2px;
+}
+
+/* Project images share one frame so they line up regardless of source size */
+.project-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  object-position: center bottom;
+  margin: 0 auto 8px;
+}
+
+
+/* 7. Navigation / breadcrumb
+   -------------------------------------------------------------------------- */
 ol.breadcrumb {
-  font-size: 20px; 
+  font-size: 20px;
 }
 
 ol.breadcrumb li {
-  display: inline; 
+  display: inline;
 }
 
-ol.breadcrumb li+li:before {
-  content:"// "
+ol.breadcrumb li + li::before {
+  content: "// ";
 }
 
 nav a {
-  background: linear-gradient(0deg, green, green) no-repeat right bottom / 0 var(--bg-h);
-  transition: background-size 350ms;
   --bg-h: 100%;
+  background: linear-gradient(0deg, var(--accent), var(--accent))
+              no-repeat right bottom / 0 var(--bg-h);
+  transition: background-size 350ms;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  line-height: 1;
+  color: inherit;
 }
 
-nav a {
-  text-decoration: underline; 
-  text-decoration-color: green; 
-  line-height: 1; 
-  color: inherit; 
-}
-
-.underline {
-  --bg-h: 2px; 
+nav a.underline {
+  --bg-h: 2px;
 }
 
 nav a:where(:hover, :focus-visible) {
@@ -182,80 +228,84 @@ nav a:where(:hover, :focus-visible) {
   background-position-x: left;
 }
 
-.photo-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px; /* Space between books */
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      border: 10px solid #ece1d6; 
-      box-shadow: 10px 10px white, 20px 20px black;
-      background-color: #ece1d6; 
+
+/* 8. Hover tooltip
+   -------------------------------------------------------------------------- */
+.hover-wrapper {
+  position: relative;
+  cursor: pointer;
+  font-style: italic;
+  color: var(--accent);
+  text-decoration-line: underline;
 }
-    .photo-card {
-    text-decoration: none;
-    color: inherit;
-    text-align: center;
-    transition: transform ;
-    }
 
-    .photo-card:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    }
+.hover-box {
+  display: none;
+  position: absolute;
+  bottom: 120%;
+  left: -50%;
+  z-index: 10;
+  width: 200px;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+  font-style: normal;
+  text-decoration: none;
+}
 
-    .photo-card img {
-    width: 100%;
-    height: auto;
-    border: 2px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 2px 2px white, 5px 5px black;
-    margin-bottom: 2px;
-    }
-
-    .photo-card p {
-      margin-top: 0px;
-      font-size: 15px;
-    }
-
-    .photo-card b {
-      font-size: 20px;
-    }
-
-    .hover-wrapper {
-      position:relative; 
-      cursor: pointer; 
-      font-style: italic;
-      color:green; 
-      text-decoration-line: underline;
-    }
-
-    .hover-box {
-      display: none; 
-      position: absolute; 
-      bottom: 120%; 
-      left:-50%; 
-      z-index:10; 
-      background:#fff; 
-      border:1px solid #000; 
-      padding:5px; 
-      width:200px; 
-      color:#000; 
-      font-style: normal;
-      text-decoration: none; 
-    }
-
-    .hover-wrapper:hover .hover-box, 
-    .hover-wrapper:focus-within .hover-box {
-      display:block;
-    }
-
-    b.wrappy {
-      font-size: 20px; 
-    }
+.hover-wrapper:hover .hover-box,
+.hover-wrapper:focus-within .hover-box {
+  display: block;
+}
 
 
+/* 9. Page-specific: projects
+   -------------------------------------------------------------------------- */
+body.projects-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.projects-page a {
+  text-decoration: none;
+  color: inherit;
+}
 
 
+/* 10. Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .book-grid  { grid-template-columns: repeat(6, 1fr); }
+}
 
+/* Tablets */
+@media (max-width: 900px) {
+  .book-grid  { grid-template-columns: repeat(4, 1fr); }
+  .photo-grid { grid-template-columns: repeat(3, 1fr); }
+}
 
+/* Large phones */
+@media (max-width: 600px) {
+  .book-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+}
