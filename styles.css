@@ -95,6 +95,13 @@ h1 {
   background-color: var(--paper);
 }
 
+.page {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
 .box,
 .lower_box {
   font-size: 1.075em;
@@ -130,15 +137,9 @@ h1 {
 
 .book-grid    { grid-template-columns: repeat(8, 1fr); }
 .photo-grid   { grid-template-columns: repeat(4, 1fr); }
+.project-grid { grid-template-columns: repeat(4, 1fr); }
 
-/* Projects: columns fill automatically, cards are top-aligned so
-   differing text lengths don't push images out of line. */
-.project-grid {
-  width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
-  justify-content: center;
-  align-items: start;
-}
+
 
 /* Shared card behavior */
 .book-card,
@@ -163,7 +164,6 @@ h1 {
 }
 
 .project-card p { font-size: 20px;}
-
 .project-card b { font-size: 25px; }
 .photo-card b   { font-size: 20px; }
 
@@ -185,40 +185,13 @@ h1 {
   margin-bottom: 2px;
 }
 
-/* Project images share one frame so they line up regardless of source size */
 .project-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
+  height: auto; 
+  /* object-fit: contain;
   object-position: center bottom;
-  margin: 0 auto 8px;
-}
-
-figure.float-right {
-  float: right;
-  width: 400px;
-  margin: 0 0 15px 40px;
-}
-
-figure.float-left {
-  float: left;
-  width: 400px;
-  margin: 0 40px 15px 0;
-}
-
-figure.float-right figcaption,
-figure.float-left figcaption {
-  font-family: 'Bion-BookCond';
-  font-size: 15px;
-  text-align: center;
-}
-
-figure.float-right img,
-figure.float-left img {
-  display: block;
-  width: 100%;
-  margin: 0;
+  margin: 0 auto 8px; */
 }
 
 
