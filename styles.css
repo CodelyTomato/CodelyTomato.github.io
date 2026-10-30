@@ -1,21 +1,5 @@
-/* ==========================================================================
-   afmoriarty — site styles
-   Sections:
-   1. Fonts
-   2. Variables
-   3. Base elements
-   4. Layout helpers
-   5. Boxes
-   6. Grids & cards (books, photos, projects)
-   7. Navigation / breadcrumb
-   8. Hover tooltip
-   9. Page-specific: projects
-   10. Responsive
-   ========================================================================== */
 
-
-/* 1. Fonts
-   -------------------------------------------------------------------------- */
+/* FONTS */ 
 @font-face {
   font-family: 'Bion-BookCond';
   src: url('fonts/Bion-BookCond.woff2') format('woff2'),
@@ -30,32 +14,10 @@
        url('fonts/Bion-BoldCond.ttf') format('truetype');
 }
 
-
-/* 2. Variables
-   -------------------------------------------------------------------------- */
-:root {
-  --paper: #ece1d6;
-  --accent: green;
-  --shadow-offset: 10px 10px white, 20px 20px black;
-  --shadow-offset-small: 2px 2px white, 5px 5px black;
-  --content-width: 1200px;
-}
-
-/* 3. Base elements
-   -------------------------------------------------------------------------- */
-body {
-  min-height: 100vh;
-  font-family: 'Bion-BookCond';
-  background: repeating-conic-gradient(
-    from 0deg at 100% 0%,
-    black 0deg,   black 10deg,
-    white 10deg,  white 20deg
-  );
-}
-
 p {
   font-size: 20px;
   font-family: 'Bion-BookCond';
+  line-height: 1.5;
 }
 
 b {
@@ -72,21 +34,105 @@ h1 {
   font-family: 'Bion-BoldCond';
 }
 
+/* BACKGROUND */ 
 
-/* 4. Layout helpers
-   -------------------------------------------------------------------------- */
+:root {
+  --paper: #ece1d6;
+  --accent: green;
+  --shadow-offset: 10px 10px #ceb69d, 20px 20px #b19271;
+  --shadow-offset-small: 2px 2px white, 5px 5px black;
+  --content-width: 1200px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Bion-BookCond';
+  background-image: url("Art/stars.gif"); 
+}
+
+/* BOXES */
+
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
+
+.column {
+  width: 50%; 
+}
+
+.row {
+  display: flex; 
+  align-items: flex-start;
+  gap: 5%; 
+}
+
+.wide_box,
+.medium_box,
+.book-grid,
+.small_box {
+  border: 10px solid var(--paper);
+  box-shadow: var(--shadow-offset);
+  background-color: var(--paper);
+  margin-top: 40px; 
+}
+
+.wide_box {
+  width: 100%; 
+}
+
+.small_box {
+  width: 30%; 
+}
+
+.medium_box {
+  width: 70%; 
+}
+
+.button_box {
+  width: 90px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex; 
+  border: 2px groove #a19e9e
+}
+
+.book-grid    { 
+  grid-template-columns: repeat(8, 1fr); 
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 0;
+  font-size: 15px;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  transition: transform 0.2s ease;
 }
 
 
-/* 5. Boxes
-   -------------------------------------------------------------------------- */
-.box,
+
+
+
+/* .box,
 .lower_box,
+.page_box,
 .book-grid,
 .photo-grid,
 .project-grid {
@@ -94,6 +140,8 @@ h1 {
   box-shadow: var(--shadow-offset);
   background-color: var(--paper);
 }
+
+
 
 .page {
   max-width: var(--content-width);
@@ -103,15 +151,20 @@ h1 {
 }
 
 .box,
+.page_box,
 .lower_box {
   font-size: 1.075em;
 }
 
+.box {
+  margin-top: 20px; 
+}
+
+.page_box, 
 .lower_box {
   margin-top: 40px;
 }
 
-/* Images inside a box never overflow it */
 .box img,
 .lower_box img {
   display: block;
@@ -120,11 +173,6 @@ h1 {
   margin: 20px auto;
 }
 
-
-/* 6. Grids & cards
-   -------------------------------------------------------------------------- */
-
-/* Shared grid settings */
 .book-grid,
 .photo-grid,
 .project-grid {
@@ -139,9 +187,6 @@ h1 {
 .photo-grid   { grid-template-columns: repeat(4, 1fr); }
 .project-grid { grid-template-columns: repeat(4, 1fr); }
 
-
-
-/* Shared card behavior */
 .book-card,
 .photo-card,
 .project-card {
@@ -167,7 +212,6 @@ h1 {
 .project-card b { font-size: 25px; }
 .photo-card b   { font-size: 20px; }
 
-/* Card images */
 .book-card img,
 .photo-card img {
   width: 100%;
@@ -189,14 +233,9 @@ h1 {
   display: block;
   width: 100%;
   height: auto; 
-  /* object-fit: contain;
-  object-position: center bottom;
-  margin: 0 auto 8px; */
-}
+} */
 
 
-/* 7. Navigation / breadcrumb
-   -------------------------------------------------------------------------- */
 ol.breadcrumb {
   font-size: 20px;
 }
@@ -236,7 +275,7 @@ a.underline:where(:hover, :focus-visible) {
 
 .spec-table {
   border-collapse: collapse;
-  margin: 20px auto;          /* centers it */
+  margin: 20px auto;          
   font-family: 'Bion-BookCond';
   font-size: 20px;
 }
@@ -253,9 +292,6 @@ a.underline:where(:hover, :focus-visible) {
   text-align: center;
 }
 
-
-/* 8. Hover tooltip
-   -------------------------------------------------------------------------- */
 .hover-wrapper {
   position: relative;
   cursor: pointer;
@@ -292,38 +328,4 @@ a.underline:where(:hover, :focus-visible) {
   transform: scale(1.05);
 }
 
-/* 10. Responsive
-   -------------------------------------------------------------------------- */
-@media (max-width: 1200px) {
-  .book-grid  { grid-template-columns: repeat(6, 1fr); }
-}
-
-/* Tablets */
-@media (max-width: 900px) {
-  .book-grid  { grid-template-columns: repeat(4, 1fr); }
-  .photo-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-/* Large phones */
-@media (max-width: 600px) {
-  .book-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 15px;
-  }
-  .photo-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 10px;
-  }
-}
-
-/* Small phones */
-@media (max-width: 400px) {
-  .book-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 10px;
-  }
-}
 
