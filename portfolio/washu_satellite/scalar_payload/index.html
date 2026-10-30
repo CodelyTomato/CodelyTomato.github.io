@@ -6,6 +6,7 @@
         afmoriarty // scalar payload
     </title>
     <link rel="stylesheet" href="../../../styles.css"></link>
+    <link rel="icon" type="image/gif" href="../../../../Art/spaceman.gif"/>
     <style>
         .pdfobject-container {
             height:500px; 
@@ -29,16 +30,20 @@
                         </ol>
                     </nav>
                     <p>
-                        SCALAR is a 1U CubeSat launching in Spring 2027, and is the first satellite being launched by the WashU Satellite Team.
-                        Being our first satellite, the success criteria is mainly to put a satellite into orbit that we can talk to. The stretch criteria
-                        is that we are putting club-engineered magnetorquers onboard and are hoping to perform 3-axis control using only their generated 
-                        mangetic fields. As responsible engineer for the payload module, I directed the development of these magnetorquers. 
+                        Designed and built magnetorquers for the SCALAR CubeSat mission launcing Spring 2027 with the objective of demonstrating 3-axis controls using only magnetic fields. 
+                        Maximized the generated magnetic dipole to be at least <mark>1 A*m^2</mark> while complying with a 1U form factor constraints such as power and volume, using
+                        a tool I wrote in MATLAB to identify best possible magnetorquer designs. Built a wire-tensioner in SolidWorks and 
+                        3D printed that increases wire uniformity and layer count. Created and validated test cases prior to final integration. 
                     </p>
                     <div style="align-items: center; display: flex; gap: 5%">
-                        <div left_text>
-                            <p></p>
+                        <figure style="max-width: 40%; margin: 0 !important; padding: 0;">
+                            <img src="../../portfolio_art/payload/final_rod.jpg" style="max-width: 100%; height: auto;">
+                            <figcaption style="text-align: center;"> flight magnetorquer during testing </figcaption>
+                        </figure>
+                        <div class="right_text">
+                            <p><img src="../../../Art/w98_document.ico" alt="description" style="vertical-align: middle;"><a class="underline" href="https://en.wikipedia.org/wiki/Schleswig%E2%80%93Holstein_question" target="_blank">  technical report COMING SOON</a></p>
+                            <p><img src="../../../Art/puter.png" style="vertical-align: middle;"><a class="underline" href="https://github.com/CodelyTomato/Magnetorquer-Optimization" target="_blank"> MATLAB Design Tool</a></p>
                         </div>
-                        <img src="../../portfolio_art/payload/final_rod.jpg" style="max-width: 40%; height: auto;">
                     </div>
                 </div>
             </div>

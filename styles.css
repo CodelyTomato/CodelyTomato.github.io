@@ -34,6 +34,13 @@ h1 {
   font-family: 'Bion-BoldCond';
 }
 
+mark {
+  background-color: #313131ee;
+  color: white; 
+  padding: 0.25em;  
+  font-family: "PT Mono",monospace !important;
+}
+
 /* BACKGROUND */ 
 
 :root {
